@@ -1,0 +1,32 @@
+header{
+    width: 100vw;
+    height: 6vh;
+    background-color: var(--base);
+    padding: 3vh 0;
+    
+    ul{
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        li{
+            width: 50%;
+            align-content: center;
+            height: 100%;
+            .HeaderLink{
+                height: 96%;
+                width: 76%;
+                margin: 0 10%;
+                display: block;
+                text-wrap: nowrap;
+                color: var(--white);
+                font-size: 2vh;
+                border-radius: var(--border);
+                border: 0.5vh solid;
+                border-color: var(--baseDark);
+
+                text-align: center;
+                align-content: center;
+            }
+        }
+    }
+}

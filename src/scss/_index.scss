@@ -1,0 +1,11 @@
+@import './normalize';
+
+@import './header';
+@import './main';
+@import './footer';
+
+@import "./variables";
+
+body{
+    background-color: var(--white);
+}

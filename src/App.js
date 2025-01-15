@@ -1,10 +1,9 @@
-export const App = ({ Components }) => {
+export const App = ({ Components, RouteComponent }) => {
     const { HeaderComponent, MainComponent, FooterComponent } = Components;
-    const num = 2;
     return (
         <>
-            <HeaderComponent num={num} />
-            <MainComponent />
+            <HeaderComponent />
+            <MainComponent RouteComponent={RouteComponent}/>
             <FooterComponent />
         </>
     );

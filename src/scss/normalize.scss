@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: var(--black);
+  transition: ease 0.15s;
+}
+
+a{
+  text-decoration: none;
+}
+
+li, ul, ol{
+  list-style: none;
+}

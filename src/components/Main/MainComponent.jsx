@@ -1,3 +1,5 @@
-export const MainComponent = () => {
-    return <main className="Main"></main>;
+export const MainComponent = ({ RouteComponent }) => {
+    return <main className="Main">
+        <RouteComponent />
+    </main>;
 };
