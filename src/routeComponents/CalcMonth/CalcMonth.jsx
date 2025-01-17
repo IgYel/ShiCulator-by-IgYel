@@ -170,7 +170,8 @@ You will not be able to redo this action back`);
         const compilateMoth = document.querySelector("#compilateMoth");
         
         if (compilateMoth) {
-            compilateMoth.onclick = () => {
+            
+            compilateMoth.addEventListener("click", () => {
                 const shifts = getFromLs();
                 let rate = Number(getRateFromLs());
 
@@ -227,12 +228,11 @@ bonus: ${shift.bonus}`;
     Total salary: ${finalSalary} CZK`;
 
                 console.log(compiledShifts);
-                compilateMoth.addEventListener("click", () => {
-                    navigator.clipboard.writeText(compiledShifts)
-                        .then(() => console.log("Скопировано!"))
-                        .catch(err => console.error("Ошибка копирования:", err));
-                });
-            };
+            
+                navigator.clipboard.writeText(compiledShifts)
+                    .then(() => console.log("Скопировано!"))
+                    .catch(err => console.error("Ошибка копирования:", err));
+            });
         }
     }, []);     
     
