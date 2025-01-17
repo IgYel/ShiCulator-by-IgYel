@@ -1,0 +1,24 @@
+{
+    "Ce26": [
+        { "min": 13000, "bonus": 350 },
+        { "min": 16000, "bonus": 550 },
+        { "min": 20000, "bonus": 650 },
+        { "min": 25000, "bonus": 800 },
+        { "min": 30000, "bonus": 1000 },
+        { "min": 35000, "bonus": 1200 }
+    ],
+    "Ha20": [
+        { "min": 10000, "percent": 2.5 },
+        { "min": 13000, "percent": 3 },
+        { "min": 16000, "percent": 4 },
+        { "min": 20000, "percent": 5 }
+    ],
+    "Ha18": [
+        { "min": 7000, "percent": 3 },
+        { "min": 11000, "percent": 4.5 },
+        { "min": 15000, "percent": 5 }
+    ],
+    "Maj": [
+        { "min": 6400, "percent": 25 }
+    ]
+}
