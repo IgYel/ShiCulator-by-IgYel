@@ -172,9 +172,9 @@ You will not be able to redo this action back`);
         async function copyToClipboard(text) {
             try {
                 await navigator.clipboard.writeText(text);
-                console.log("Скопировано!");
+                console.log("Copied!");
             } catch (err) {
-                console.error("Ошибка копирования:", err);
+                console.error("copy error:", err);
             }
         }
         
