@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ShiCulator-by-IgYel/static/css/main.38a010ed.css",
-    "main.js": "/ShiCulator-by-IgYel/static/js/main.c6aeefe5.js",
+    "main.js": "/ShiCulator-by-IgYel/static/js/main.c022ecad.js",
     "index.html": "/ShiCulator-by-IgYel/index.html",
     "main.38a010ed.css.map": "/ShiCulator-by-IgYel/static/css/main.38a010ed.css.map",
-    "main.c6aeefe5.js.map": "/ShiCulator-by-IgYel/static/js/main.c6aeefe5.js.map"
+    "main.c022ecad.js.map": "/ShiCulator-by-IgYel/static/js/main.c022ecad.js.map"
   },
   "entrypoints": [
     "static/css/main.38a010ed.css",
-    "static/js/main.c6aeefe5.js"
+    "static/js/main.c022ecad.js"
   ]
 }
