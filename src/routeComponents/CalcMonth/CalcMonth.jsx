@@ -169,6 +169,15 @@ You will not be able to redo this action back`);
     useEffect(() => {
         const compilateMoth = document.querySelector("#compilateMoth");
     
+        async function copyToClipboard(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                console.log("Скопировано!");
+            } catch (err) {
+                console.error("Ошибка копирования:", err);
+            }
+        }
+        
         if (compilateMoth) {
             compilateMoth.onclick = () => {
                 const shifts = getFromLs();
@@ -227,6 +236,7 @@ bonus: ${shift.bonus}`;
     Total salary: ${finalSalary} CZK`;
 
                 navigator.clipboard.writeText(compiledShifts) //* Copy to clickboard
+                copyToClipboard(compiledShifts) //* Copy to clickboard
                 console.log(compiledShifts);
             };
         }
