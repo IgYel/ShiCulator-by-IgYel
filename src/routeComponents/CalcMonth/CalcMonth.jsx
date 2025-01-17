@@ -226,8 +226,8 @@ bonus: ${shift.bonus}`;
     Total hours: ${totalHours}h
     Total salary: ${finalSalary} CZK`;
 
-                console.log(compiledShifts);
                 navigator.clipboard.writeText(compiledShifts) //* Copy to clickboard
+                console.log(compiledShifts);
             };
         }
     }, []);     

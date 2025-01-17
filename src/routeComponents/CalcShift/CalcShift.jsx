@@ -19,7 +19,7 @@ const getTodayDate = () => {
 const Today = getTodayDate();
 
 const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text)
+  navigator.clipboard.writeText(text)
 };
 
 //! local storage
