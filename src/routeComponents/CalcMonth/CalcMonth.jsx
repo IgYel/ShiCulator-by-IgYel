@@ -227,7 +227,7 @@ bonus: ${shift.bonus}`;
     Total salary: ${finalSalary} CZK`;
 
                 console.log(compiledShifts);
-                navigator.clipboard.writeText(compiledShifts) //* Copy to clickboard
+                navigator.clipboard.write(compiledShifts) //* Copy to clickboard
             };
         }
     }, []);     
