@@ -38,14 +38,6 @@ const getFromLs = () => {
     return data ? JSON.parse(data) : [];
 };
 
-const getDefShop = () => {
-    const data = localStorage.getItem('defShop');
-    return data ? JSON.parse(data) : 'Ce26';
-}
-
-
-const defaultShop = getDefShop();
-
 //! Bonus auto counting
 
 const countBonus = (shop, trzba) => {
@@ -88,16 +80,36 @@ const getHours = (shop) => {
 };
 
 //! calculations
-
 export const CalcShift = () => {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [shop, setShop] = useState();
+  
+  const [defaultShop, setDefaultShop] = useState(localStorage.getItem("defaultShop") || "noDefault");
+
   const [shopSelect, setShopSelect] = useState(defaultShop);
   
   const [trzba, setTrzba] = useState("");
   const [bonus, setBonus] = useState("");
   const [isCustomMode, setIsCustomMode] = useState(false);
+
+  const setDefaultShopFunction = () =>{
+    const setDefShop = document.querySelector('#setDefShop');
+    setDefShop.style.display = "none"
+
+    if(defaultShop !== "noDefault"){
+      localStorage.setItem("defaultShop", defaultShop)
+    } else{
+      localStorage.setItem("defaultShop", "2smena")
+    }
+  }
+  
+  useEffect(() => { //check if defaultShop set
+    if(defaultShop == "noDefault"){
+      const setDefShop = document.querySelector('#setDefShop');
+      setDefShop.style.display = "block"
+    }
+  });
 
   const handleCustomSubmit = (event) => {
     event.preventDefault();
@@ -172,10 +184,16 @@ Hezky vecer!`;
   })
 
   useEffect(() =>{
+    const TrzbaInput = document.querySelector('#TrzbaInput');
+    TrzbaInput.style.display = "none"
+
     if(shopSelect === "2smena"){
       const TrzbaInput = document.querySelector('#TrzbaInput');
       TrzbaInput.style.display = "none"
-    }
+    } else{
+      const TrzbaInput = document.querySelector('#TrzbaInput');
+      TrzbaInput.style.display = "block"
+    } 
   })
   
   //!   HTML
@@ -185,7 +203,7 @@ Hezky vecer!`;
       <h1 className="Title">Calculate today's Shift</h1>
 
       <div id="ModeSelector">
-        <div>
+        <div id="ModeLabel">
           custom mode
         </div>
 
@@ -202,12 +220,13 @@ Hezky vecer!`;
         <form onSubmit={handleNormalSubmit}>
           <select
           id="ShopNormal"
+          value={shopSelect}
           onChange={(e) => setShopSelect(e.target.value)}>
+            <option value="2smena">2 smena (2nd shift)</option>
             <option value="Ce26">Celetna 26</option>
             <option value="Ha20">Havelska 20</option>
             <option value="Ha18">Havelska 18</option>
             <option value="Maj">Maj</option>
-            <option value="2smena">2 smena (2nd shift)</option>
           </select>
   
           <input
@@ -259,6 +278,33 @@ Hezky vecer!`;
           />
           <input className="submit" type="submit" value="save shift" />
         </form>
+      </div>
+
+      <div id="setDefShop">
+        <div id="backgroundDefShop"></div>
+        <div id="Content">
+        <p>
+          Set the shop,
+          where you work 
+          most of the time
+          <br />
+          (To save you time)
+        </p>
+        <form onSubmit={setDefaultShopFunction}>
+
+          <select 
+          onChange={(e) => setDefaultShop(e.target.value)}
+          id="selectDefaultShop">
+            <option value="2smena">2 smena (2nd shift)</option>
+            <option value="Ce26">Celetna 26</option>
+            <option value="Ha20">Havelska 20</option>
+            <option value="Ha18">Havelska 18</option>
+            <option value="Maj">Maj</option>
+          </select>
+  
+          <input type="submit" className="submit" value="save default shop"/>
+        </form>
+        </div>
       </div>
     </section>
   );

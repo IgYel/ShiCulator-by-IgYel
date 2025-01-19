@@ -10,6 +10,9 @@ main{
         align-content: center;
         color: rgba(0, 0, 0, 0.201);
     }
+    #TrzbaInput{
+        display: none;
+    }
 
     #NormalMode{
         display: block;
@@ -61,7 +64,8 @@ main{
         height: 10vh;
         display: flex;
 
-        div{
+        #ModeLabel{
+            min-width: fit-content;
             width: 200%;
             margin: 2vh 0;
             text-align: center;
@@ -165,12 +169,46 @@ main{
     }
 
     #clearLsButton{
-        position: absolute;
-        bottom: 0;
-        left: 10vw;
+        margin-left: 5vw;
         border-color: var(--red);
         color: var(--red);
         font-size: 3.5vh;
         width: 80vw;
+    }
+
+
+    #setDefShop{
+        width: 100vw;
+        height: 2100vh;
+        top: 0;
+        left: 0;
+        display: none;
+        
+        position: fixed;
+        #backgroundDefShop{
+            width: 100vw;
+            height: 100vh;
+            background-color:rgba(25, 31, 41, 0.352);
+            backdrop-filter: blur(1vh);
+        }
+        #Content{
+            p{
+                text-align: center;
+                align-content: center;
+                color: var(--black);
+                margin-bottom: 2vh;
+            }
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            width: 86vw;
+            height: 46vh;
+
+            margin: 25vh 5vw;
+            padding: 2vh 2vw;
+            background-color: var(--white);
+            border-radius: var(--border);
+        }
     }
 }
