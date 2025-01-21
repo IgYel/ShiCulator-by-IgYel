@@ -140,6 +140,7 @@ export const CalcMonth = () => {
         const salaryDisplay = document.querySelector('#salaryDisplay');
 
         //*checkRate function
+        
         const checkRate = getRateFromLs();
         if(checkRate !== "noData"){
             const changeRateWindow = document.querySelector('#changeRateWindow');
