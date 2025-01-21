@@ -133,7 +133,7 @@ export const CalcShift = () => {
     event.preventDefault();
 
     if (lastShiftDate == Today) {
-      showSaveMessage("#dateExistError", 4000);
+      showSaveMessage("#dateExistError", 6000);
     } else{
       const msg = `
 ${Today}, 
@@ -165,7 +165,7 @@ trzba: ${trzba}`;
   const handleNormalSubmit = (event) => {
     event.preventDefault();
     if (lastShiftDate == Today) {
-      showSaveMessage("#dateExistError", 4000);
+      showSaveMessage("#dateExistError", 6000);
     } else{
       const hours = getHours(document.querySelector("#ShopNormal").value);
 

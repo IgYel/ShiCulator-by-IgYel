@@ -132,6 +132,7 @@ export const CalcMonth = () => {
     
         const changeShiftElement = document.querySelector("#changeShiftElement");
         changeShiftElement.style.display = "none";
+        window.location.reload();
     };
 
     useEffect(() =>{
