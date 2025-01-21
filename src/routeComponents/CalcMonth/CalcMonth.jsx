@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { makeButton } from "../../components/Header/HeaderComponent";
+import {showSaveMessage} from "../CalcShift/CalcShift"
 
 const saveRateToLs = (newRate) => {
     localStorage.setItem("rate", JSON.stringify(newRate));
@@ -230,8 +231,8 @@ bonus: ${shift.bonus}`;
                 console.log(compiledShifts);
             
                 navigator.clipboard.writeText(compiledShifts)
-                    .then(() => console.log("Скопировано!"))
-                    .catch(err => console.error("Ошибка копирования:", err));
+                .then(() => showSaveMessage('#savedListMessage', 2700)) //! show the message
+                .catch(err => console.error("Ошибка копирования:", err));
             });
         }
     }, []);     
@@ -323,6 +324,23 @@ bonus: ${shift.bonus}`;
                 className="submit" 
                 id="clearLsButton" 
             />
+            
+            <div id="savedListMessage" className="savedMessage">
+                <div className="savedMessageBackground"></div>
+                <div className="savedMessageContent">
+          
+                  <div className="titleMessage">Your shift list was copied</div>
+        
+                  <svg
+                  className="tick"
+                  width="489"
+                  height="470"
+                  viewBox="0 0 489 470"
+                  fill="none">
+                    <path d="M25.5 277C96 309.853 191.5 415 191.5 415C191.5 415 236.5 167 463.5 25.5" stroke="#ece9f0" stroke-width="50" stroke-linecap="round"/>
+                  </svg>
+                </div>
+            </div>
         </section>
     );
 };

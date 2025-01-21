@@ -7,3 +7,11 @@
     --red: #be6666;
     --border: 3vh;
 }
+
+@keyframes tickMove {
+    0%{}
+    100%{
+        stroke-dashoffset: 0vh;
+    }
+    
+}
