@@ -40,7 +40,10 @@ const getFromLs = () => {
 };
 
 const List = getFromLs();
-const lastShiftDate = List.at(-1).date;
+const lastShiftDate =
+  List.length > 0 && List.at(-1)?.date ? List.at(-1).date : 0;
+
+console.log(lastShiftDate);
 
 //! Bonus auto counting
 
@@ -85,12 +88,12 @@ const getHours = (shop) => {
 export const showSaveMessage = (id, time) => {
   const element = document.querySelector(id);
   element.style.opacity = 1;
-  element.classList.add('addPointer');
-  
+  element.classList.add("addPointer");
+
   setTimeout(() => {
     element.style.opacity = 0;
     window.location.reload();
-    element.classList.remove('addPointer');
+    element.classList.remove("addPointer");
   }, time);
 };
 
@@ -134,7 +137,7 @@ export const CalcShift = () => {
 
     if (lastShiftDate == Today) {
       showSaveMessage("#dateExistError", 6000);
-    } else{
+    } else {
       const msg = `
 ${Today}, 
 hours: ${end - start},
@@ -166,7 +169,7 @@ trzba: ${trzba}`;
     event.preventDefault();
     if (lastShiftDate == Today) {
       showSaveMessage("#dateExistError", 6000);
-    } else{
+    } else {
       const hours = getHours(document.querySelector("#ShopNormal").value);
 
       const shop = shopSelect;
