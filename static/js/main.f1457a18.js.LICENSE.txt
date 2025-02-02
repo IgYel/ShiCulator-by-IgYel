@@ -41,3 +41,7 @@
  */
 
 //!   HTML
+
+//! Bonus auto counting
+
+//! dayOfWeekFunction
